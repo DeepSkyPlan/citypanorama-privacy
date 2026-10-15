@@ -16,19 +16,35 @@
 <body>
 <p><a href="https://deepskyplan.github.io/citypanorama-app/">← CityPanorama</a></p>
 <h1>Datenschutzerklärung — CityPanorama</h1>
-<p class="dim">Stand: 14. Oktober 2026 · <a href="#en">English below</a></p>
+<p class="dim">Stand: Version 1.1, Oktober 2026 · <a href="#en">English below</a></p>
 
 <p>CityPanorama zeichnet die Skyline von Berlin vom Standort des Nutzers aus. Die App ist so gebaut,
 dass sie ohne personenbezogene Daten auskommt: es gibt kein Konto, keine Anmeldung, keine Analytik,
 keine Werbung und keinen Server dieses Projekts.</p>
 
 <h2>Was wir erheben</h2>
-<p><strong>Nichts.</strong> Die Stadtdaten (Gebäude, Gelände, Orte) liegen in der App. Die App selbst
-stellt keine Anfragen ins Netz.</p>
+<p><strong>Nichts, was wir speichern oder sehen könnten</strong> — dieses Projekt betreibt keinen Server.
+Für Berlin liegen die Stadtdaten in der App. <strong>Außerhalb Berlins</strong> lädt die App die Kartendaten
+der Umgebung von zwei öffentlichen Diensten (siehe unten) und speichert sie auf dem Gerät, damit jede
+Gegend nur einmal abgefragt wird.</p>
+
+<h2>Dienste, die die App außerhalb Berlins fragt</h2>
+<table>
+<tr><th>Dienst</th><th>Wozu</th><th>Was er erfährt</th></tr>
+<tr><td>Overpass-API (overpass-api.de, ersatzweise overpass.private.coffee) — Daten von OpenStreetMap</td>
+<td>Gebäude, Türme, Gipfel, Wasser, Parks, Straßen, Bahn</td>
+<td>Ein Kartenausschnitt fester Größe (etwa 4–55 km) um deinen Standort, deine IP-Adresse</td></tr>
+<tr><td>Terrarium-Höhenkacheln bei Amazon Web Services</td>
+<td>Gelände</td>
+<td>Welche Kacheln (je etwa 25 km) geladen werden, deine IP-Adresse</td></tr>
+</table>
+<p>Der genaue Standort wird nie übertragen, nur welche festen Kacheln gebraucht werden. Es gibt keine
+Kennung, kein Konto, und die Anfragen sind mit nichts anderem verknüpft.</p>
 
 <h2>Standort</h2>
 <p>Beim ersten Start fragt die App nach deinem Standort, und zwar nur für die Zeit, in der sie benutzt wird.
-Er bestimmt, von wo aus die Skyline gerechnet wird, und <strong>verlässt das Gerät nicht</strong>. Lehnst du ab
+Er bestimmt, von wo aus die Skyline gerechnet wird; der <strong>genaue Standort verlässt das Gerät nicht</strong>
+(außerhalb Berlins nur die Kachel, in der er liegt, siehe oben). Lehnst du ab
 oder schaltest „GPS verwenden“ aus, rechnet die App von einem Punkt, den du auf der Karte wählst. Gespeichert
 wird nur dieser von Hand gesetzte Punkt, in den Einstellungen der App auf dem Gerät.</p>
 
@@ -48,10 +64,12 @@ Browser; ab dort gelten die Bestimmungen der Wikimedia Foundation.</p>
 <p>CityPanorama (Privatperson, Deutschland) · <a href="mailto:deepframe.support@gmail.com">deepframe.support@gmail.com</a></p>
 
 <h2 id="en">Privacy policy (English)</h2>
-<p>CityPanorama collects <strong>no data</strong>. There is no account, no analytics, no advertising and no
-server. The city data is bundled with the app, and the app makes no network requests of its own.
+<p>CityPanorama has no account, no analytics, no advertising and no server. For Berlin the city data is
+bundled. Elsewhere the app loads the map data around you from the Overpass API (OpenStreetMap) and the
+Terrarium elevation tiles on Amazon Web Services, in fixed tiles of a few to some 50 km, and keeps them on
+the device; those services see which tiles are requested and your IP address, never your exact position.
 On first launch the app asks for your location, only while it is in use; it sets where the skyline is
-drawn from and never leaves the device. If you decline, you pick the viewpoint on the map. The camera picture, if you switch it on, is neither stored nor sent. The map uses Apple MapKit;
+drawn from and never leaves the device as such. If you decline, you pick the viewpoint on the map. The camera picture, if you switch it on, is neither stored nor sent. The map uses Apple MapKit;
 the Wikipedia button opens your browser. Contact: <a href="mailto:deepframe.support@gmail.com">deepframe.support@gmail.com</a>.</p>
 </body>
 </html>
